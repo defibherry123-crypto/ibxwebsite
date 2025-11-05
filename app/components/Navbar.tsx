@@ -42,9 +42,9 @@ export default function Navbar({ showButton = false, extraLinks = [] }: NavbarPr
                             </Link>
                         </li>
 
-                        {/* Extra links (like IBX 2026) */}
-                        {extraLinks.map((link) => (
-                            <li key={link.href}>
+                        {/* Extra links (like IBX 2026) - using index + label for unique key */}
+                        {extraLinks.map((link, index) => (
+                            <li key={`${link.label}-${index}`}>
                                 <Link href={link.href} className={getLinkClasses(link.href)}>
                                     {link.label}
                                 </Link>
@@ -76,10 +76,10 @@ export default function Navbar({ showButton = false, extraLinks = [] }: NavbarPr
                         Home
                     </Link>
 
-                    {/* Extra links for mobile */}
-                    {extraLinks.map((link) => (
+                    {/* Extra links for mobile - using index + label for unique key */}
+                    {extraLinks.map((link, index) => (
                         <Link
-                            key={link.href}
+                            key={`mobile-${link.label}-${index}`}
                             href={link.href}
                             onClick={() => setMenuOpen(false)}
                             className="block hover:text-white"

@@ -1,8 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Link from "next/link";
 import Footer from "./components/Footer";
-
 
 export default function Home() {
   const collaborators = [
@@ -20,13 +21,21 @@ export default function Home() {
     { src: "/images/chainDrive.png", alt: "Chain Drive" },
   ];
 
+  const countries = [
+    { src: "/images/flag.png", alt: "Nigeria" },
+    { src: "/images/world.png", alt: "Ghana" },
+    { src: "/images/flag.png", alt: "Cameroon" },
+    { src: "/images/world.png", alt: "Senegal" },
+    { src: "/images/ivory-coast.png", alt: "Ivory Coast" },
+  ];
+
   return (
     <div className="bg-black min-h-screen">
       <Navbar
         extraLinks={[
-          { label: "About Us", href: "/about" },
-          { label: "IBX 26", href: "/landing" },
-          { label: "IBX Tour", href: "/ibx tour" },
+          { label: "About Us", href: "https://t.co/HGiZ0Ooyef" },
+          { label: "IBX 26", href: "https://t.co/HGiZ0Ooyef" },
+          { label: "IBX Tour", href: "https://t.co/HGiZ0Ooyef" },
         ]}
       />
 
@@ -54,7 +63,7 @@ export default function Home() {
             <div className="flex items-center gap-4 md:gap-6 mt-2">
               {/* Orange Button */}
               <Link
-                href="/landing"
+                href="https://t.co/HGiZ0Ooyef"
                 className="bg-[#E87A12] text-black font-[DM Sans] font-bold text-[14px] md:text-[16px] rounded-lg px-6 md:px-8 py-3 md:py-3.5 transition-all duration-300 hover:bg-[#f68924] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30"
               >
                 2026 Event
@@ -62,7 +71,7 @@ export default function Home() {
 
               {/* White Outline Button */}
               <Link
-                href="/ibx"
+                href="https://t.co/HGiZ0Ooyef"
                 className="text-white font-[DM Sans] font-bold text-[14px] md:text-[16px] border-2 border-white rounded-lg px-6 md:px-8 py-3 md:py-3.5 transition-all duration-300 hover:bg-white/10 hover:scale-105"
               >
                 IBX Tour
@@ -73,7 +82,7 @@ export default function Home() {
       </section>
 
       <main className="bg-black">
-        {/* sponsor Section */}
+        {/* Sponsor Section */}
         <section className="flex flex-col items-start justify-center w-full max-w-[1280px] mx-auto px-6 md:px-16 py-16 md:py-20">
           <div className="flex flex-col gap-6 max-w-[867px]">
             {/* Label */}
@@ -82,13 +91,13 @@ export default function Home() {
             </label>
 
             {/* Heading */}
-            <h5 className="font-['DT_Getai_Grotesk_Display'] font-black text-[24px] leading-[32px] tracking-[0%] text-white">
+            <h5 className="font-[DM Sans] font-black text-[24px] leading-[32px] tracking-[0%] text-white">
               Join 300+ communities in amplifying impact, inspire participation, and build the foundation and shaping a strong West African Blockchain story.
             </h5>
 
             {/* Button */}
             <Link
-              href="/landing"
+              href="https://t.co/HGiZ0Ooyef"
               className="bg-[#E87A12] text-black font-[DM Sans] font-bold text-[14px] md:text-[16px] rounded-lg px-6 md:px-8 py-3 md:py-3.5 w-fit transition-all duration-300 hover:bg-[#f68924] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30"
             >
               Become a collaborator
@@ -97,232 +106,292 @@ export default function Home() {
         </section>
 
         {/* Our Collaborators Section - DESKTOP */}
-        <section className="py-20 w-full hidden md:block">
-          <div className="w-full">
-
-            {/* Collaborators Grid - Full Width */}
-            <div className="mt-12 space-y-6 px-4">
-
-              {/* Row 1 */}
-              <div className="grid grid-cols-12 gap-4 w-full">
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((index) => (
-                  <div key={`row1-${index}`} className="bg-black rounded-lg h-[80px] flex items-center justify-center">
-                    <Image 
-                      src={collaborators[index].src}
-                      alt={collaborators[index].alt}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                      loading="lazy"
-                    />
+        <section className="py-20 w-full hidden md:block overflow-hidden">
+          <div className="w-full space-y-8">
+            {/* Row 1 - Scroll Right */}
+            <div className="relative">
+              <div className="flex gap-4 animate-scroll-right">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-4 flex-shrink-0">
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((index) => (
+                      <div key={`row1-${setIndex}-${index}`} className="bg-black rounded-lg h-[80px] w-[120px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Row 2 */}
-              <div className="grid grid-cols-12 gap-4 w-full">
-                {[2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 11, 10].map((index, i) => (
-                  <div key={`row2-${i}`} className="bg-black rounded-lg h-[80px] flex items-center justify-center">
-                    <Image 
-                      src={collaborators[index].src}
-                      alt={collaborators[index].alt}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                      loading="lazy"
-                    />
+            {/* Row 2 - Scroll Left */}
+            <div className="relative">
+              <div className="flex gap-4 animate-scroll-left">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-4 flex-shrink-0">
+                    {[2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 11, 10].map((index, i) => (
+                      <div key={`row2-${setIndex}-${i}`} className="bg-black rounded-lg h-[80px] w-[120px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Row 3 */}
-              <div className="grid grid-cols-12 gap-4 w-full">
-                {[4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 10, 11].map((index, i) => (
-                  <div key={`row3-${i}`} className="bg-black rounded-lg h-[80px] flex items-center justify-center">
-                    <Image 
-                      src={collaborators[index].src}
-                      alt={collaborators[index].alt}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                      loading="lazy"
-                    />
+            {/* Row 3 - Scroll Right */}
+            <div className="relative">
+              <div className="flex gap-4 animate-scroll-right">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-4 flex-shrink-0">
+                    {[4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 10, 11].map((index, i) => (
+                      <div key={`row3-${setIndex}-${i}`} className="bg-black rounded-lg h-[80px] w-[120px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Row 4 */}
-              <div className="grid grid-cols-12 gap-4 w-full">
-                {[6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 11, 10].map((index, i) => (
-                  <div key={`row4-${i}`} className="bg-black rounded-lg h-[80px] flex items-center justify-center">
-                    <Image 
-                      src={collaborators[index].src}
-                      alt={collaborators[index].alt}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                      loading="lazy"
-                    />
+            {/* Row 4 - Scroll Left */}
+            <div className="relative">
+              <div className="flex gap-4 animate-scroll-left">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-4 flex-shrink-0">
+                    {[6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 11, 10].map((index, i) => (
+                      <div key={`row4-${setIndex}-${i}`} className="bg-black rounded-lg h-[80px] w-[120px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Row 5 */}
-              <div className="grid grid-cols-12 gap-4 w-full">
-                {[8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 10, 11].map((index, i) => (
-                  <div key={`row5-${i}`} className="bg-black rounded-lg h-[80px] flex items-center justify-center">
-                    <Image 
-                      src={collaborators[index].src}
-                      alt={collaborators[index].alt}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                      loading="lazy"
-                    />
+            {/* Row 5 - Scroll Right */}
+            <div className="relative">
+              <div className="flex gap-4 animate-scroll-right">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-4 flex-shrink-0">
+                    {[8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 10, 11].map((index, i) => (
+                      <div key={`row5-${setIndex}-${i}`} className="bg-black rounded-lg h-[80px] w-[120px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
-
-              {/* Row 6 */}
-              <div className="grid grid-cols-12 gap-4 w-full">
-                {[11, 4, 5, 10, 3, 9, 0, 1, 2, 6, 8, 7].map((index, i) => (
-                  <div key={`row6-${i}`} className="bg-black rounded-lg h-[80px] flex items-center justify-center">
-                    <Image 
-                      src={collaborators[index].src}
-                      alt={collaborators[index].alt}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-
             </div>
           </div>
         </section>
 
         {/* Our Collaborators Section - MOBILE */}
-        <section className="py-10 w-full md:hidden">
-          <div className="px-4">
-            <h2 className="font-display text-[28px] font-black leading-[36px] tracking-[-0.01em] mb-3">
-              Our Collaborators
-            </h2>
+        <section className="py-10 w-full md:hidden overflow-hidden">
 
-            <p className="font-sans text-[14px] font-normal leading-[20px] text-gray-300 mb-6">
-              We are proud to partner with these industry leaders who share our passion for discovery and help make our expeditions possible.
-            </p>
-
-            <button className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition w-full mb-8">
-              Become a collaborator
-            </button>
-          </div>
-
-          {/* Collaborators Grid - Full Width Mobile */}
-          <div className="space-y-4 px-2">
-
-            {/* Row 1 */}
-            <div className="grid grid-cols-6 gap-3 w-full">
-              {[0, 1, 2, 3, 4, 5].map((index) => (
-                <div key={`mobile-row1-${index}`} className="bg-black rounded-lg h-[60px] flex items-center justify-center">
-                  <Image 
-                    src={collaborators[index].src}
-                    alt={collaborators[index].alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+          <div className="space-y-6">
+            {/* Mobile Row 1 - Scroll Right */}
+            <div className="relative">
+              <div className="flex gap-3 animate-scroll-right-mobile">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-3 flex-shrink-0">
+                    {[0, 1, 2, 3, 4, 5].map((index) => (
+                      <div key={`mobile-row1-${setIndex}-${index}`} className="bg-black rounded-lg h-[60px] w-[80px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={48}
+                          height={48}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Row 2 */}
-            <div className="grid grid-cols-6 gap-3 w-full">
-              {[6, 7, 8, 9, 10, 11].map((index, i) => (
-                <div key={`mobile-row2-${i}`} className="bg-black rounded-lg h-[60px] flex items-center justify-center">
-                  <Image 
-                    src={collaborators[index].src}
-                    alt={collaborators[index].alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            {/* Mobile Row 2 - Scroll Left */}
+            <div className="relative">
+              <div className="flex gap-3 animate-scroll-left-mobile">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-3 flex-shrink-0">
+                    {[6, 7, 8, 9, 10, 11].map((index, i) => (
+                      <div key={`mobile-row2-${setIndex}-${i}`} className="bg-black rounded-lg h-[60px] w-[80px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={48}
+                          height={48}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Row 3 */}
-            <div className="grid grid-cols-6 gap-3 w-full">
-              {[1, 0, 4, 5, 2, 3].map((index, i) => (
-                <div key={`mobile-row3-${i}`} className="bg-black rounded-lg h-[60px] flex items-center justify-center">
-                  <Image 
-                    src={collaborators[index].src}
-                    alt={collaborators[index].alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            {/* Mobile Row 3 - Scroll Right */}
+            <div className="relative">
+              <div className="flex gap-3 animate-scroll-right-mobile">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-3 flex-shrink-0">
+                    {[1, 0, 4, 5, 2, 3].map((index, i) => (
+                      <div key={`mobile-row3-${setIndex}-${i}`} className="bg-black rounded-lg h-[60px] w-[80px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={48}
+                          height={48}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Row 4 */}
-            <div className="grid grid-cols-6 gap-3 w-full">
-              {[7, 6, 9, 8, 11, 10].map((index, i) => (
-                <div key={`mobile-row4-${i}`} className="bg-black rounded-lg h-[60px] flex items-center justify-center">
-                  <Image 
-                    src={collaborators[index].src}
-                    alt={collaborators[index].alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            {/* Mobile Row 4 - Scroll Left */}
+            <div className="relative">
+              <div className="flex gap-3 animate-scroll-left-mobile">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-3 flex-shrink-0">
+                    {[7, 6, 9, 8, 11, 10].map((index, i) => (
+                      <div key={`mobile-row4-${setIndex}-${i}`} className="bg-black rounded-lg h-[60px] w-[80px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={48}
+                          height={48}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Row 5 */}
-            <div className="grid grid-cols-6 gap-3 w-full">
-              {[3, 2, 1, 0, 5, 4].map((index, i) => (
-                <div key={`mobile-row5-${i}`} className="bg-black rounded-lg h-[60px] flex items-center justify-center">
-                  <Image 
-                    src={collaborators[index].src}
-                    alt={collaborators[index].alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            {/* Mobile Row 5 - Scroll Right */}
+            <div className="relative">
+              <div className="flex gap-3 animate-scroll-right-mobile">
+                {[...Array(3)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex gap-3 flex-shrink-0">
+                    {[3, 2, 1, 0, 5, 4].map((index, i) => (
+                      <div key={`mobile-row5-${setIndex}-${i}`} className="bg-black rounded-lg h-[60px] w-[80px] flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={collaborators[index].src}
+                          alt={collaborators[index].alt}
+                          width={48}
+                          height={48}
+                          className="object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
-
-            {/* Row 6 */}
-            <div className="grid grid-cols-6 gap-3 w-full">
-              {[10, 11, 8, 9, 6, 7].map((index, i) => (
-                <div key={`mobile-row6-${i}`} className="bg-black rounded-lg h-[60px] flex items-center justify-center">
-                  <Image 
-                    src={collaborators[index].src}
-                    alt={collaborators[index].alt}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                    loading="lazy"
-                    />
-                </div>
-              ))}
-            </div>
-
           </div>
         </section>
       </main>
 
       <Footer />
+
+      <style jsx>{`
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(-33.333%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes scroll-right-mobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+
+        @keyframes scroll-left-mobile {
+          0% {
+            transform: translateX(-33.333%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 40s linear infinite;
+        }
+
+        .animate-scroll-left {
+          animation: scroll-left 40s linear infinite;
+        }
+
+        .animate-scroll-right-mobile {
+          animation: scroll-right-mobile 30s linear infinite;
+        }
+
+        .animate-scroll-left-mobile {
+          animation: scroll-left-mobile 30s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
