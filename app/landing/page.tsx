@@ -8,12 +8,14 @@ import Footer from "../components/Footer";
 
 const blockchainEvent = "/images/meetup.png";
 const speaker = "/images/speaker.png";
-const talkSession = "/images/talk-session.jpg";
-const buisnessCard = "/images/card-image.jpg";
-const eventImage1 = "/images/April10.jpg";
-const eventImage2 = "/images/May15.jpg";
-const eventImage3 = "/images/June22.jpg";
-const eventImage4 = "/images/July30.jpg";
+const talkSession = "/images/talk-session.png";
+const buisnessCard = "/images/card-image.png";
+const eventImage1 = "/images/March10.png";
+const eventImage2 = "/images/March11.png";
+const eventImage3 = "/images/March12.png";
+const eventImage4 = "/images/March13.png";
+const eventImage5 = "/images/March14.png";
+
 
 export default function Landing() {
     const collaborators = [
@@ -760,7 +762,7 @@ export default function Landing() {
                                 <div className="px-6 pb-6">
                                     <div className="w-full h-[240px] relative rounded-xl overflow-hidden">
                                         <Image
-                                            src={buisnessCard}
+                                            src={eventImage5}
                                             alt="Founders Forge Event"
                                             fill
                                             className="object-cover"
@@ -854,7 +856,6 @@ export default function Landing() {
                 {/* Our sponsors Section - MOBILE */}
 
                 {/* Our Collaborators Section - DESKTOP */}
-/* Our Collaborators Section - DESKTOP */
                 <section className="py-20 w-full hidden md:block overflow-hidden">
                     <div className="w-full">
                         {/* Header with Button */}
