@@ -7,6 +7,7 @@ import { TrendingUp, Code, Sparkles, Building2 } from "lucide-react";
 import Footer from "../components/Footer";
 import { useEffect, useRef, useState } from "react";
 import ibx26 from "../../public/images/ibx26.png";
+import ibx266 from "../../public/images/ibx26.png";
 
 const blockchainEvent = "/images/meetup.png";
 const speaker = "/images/speaker.png";
@@ -779,12 +780,12 @@ export default function Landing() {
                 />
             </div>
 
-            <Link 
-                href="/maintenance" 
-                className="bg-orange-500 hover:bg-orange-600 text-black font-bold text-[16px] rounded-lg px-12 py-4 transition transform hover:scale-105"
-            >
-                Become a Partner
-            </Link>
+  <a
+  href="mailto:partnerships@ibomblockchain.com"
+  className="hidden md:inline-block bg-orange-500 hover:bg-orange-600 text-black font-bold text-[14px] rounded-lg px-8 py-3 transition transform hover:scale-105 whitespace-nowrap"
+>
+  Become Our Partner
+</a>
 
             
         </div>
@@ -794,41 +795,35 @@ export default function Landing() {
 
 
 {/* Join the Movement Section - MOBILE */}
-<section className="py-10 px-4 w-full mx-auto md:hidden">
-    <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-blue-500 rounded-2xl p-8 flex flex-col items-center justify-center text-center">
-        <h2 className="font-display text-[32px] font-black leading-[40px] text-orange-500 mb-6">
-            Join the Movement
-        </h2>
-        
-        <div className="mb-6 flex items-center gap-2">
-            <div className="flex gap-1">
-                <div className="w-3 h-3 bg-orange-500 rounded-sm"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-sm"></div>
-                <div className="w-3 h-3 bg-blue-600 rounded-sm"></div>
-                <div className="w-3 h-3 bg-purple-600 rounded-sm"></div>
-            </div>
-            <div className="flex flex-col items-start">
-                <p className="text-white text-[8px] font-semibold tracking-wider">
-                    IBOM BLOCKCHAIN
-                </p>
-                <p className="text-white text-lg font-black tracking-tight leading-none">
-                    <span className="text-white">XPERIENCE</span>
-                    <span className="text-orange-500 ml-1">20</span>
-                    <span className="text-blue-500">26</span>
-                </p>
-            </div>
-        </div>
+<section className="py-16 px-6 max-w-7xl mx-auto md:hidden">
+  <div className="w-full">
+    <div className="bg-[#0F0F10] border-2 border-blue-500 rounded-2xl p-10 flex flex-col items-center text-center">
 
-        <Link 
-            href="/maintenance" 
-            className="bg-orange-500 hover:bg-orange-600 text-black font-bold text-[14px] rounded-lg px-8 py-3 transition transform hover:scale-105 w-full"
-        >
-            Become a partner
-        </Link>
+      {/* Header */}
+      <h2 className="font-display text-[28px] font-black text-orange-500 mb-6">
+        Join the Movement
+      </h2>
 
-        
+      {/* Full IBX Experience Logo */}
+      <div className="mb-6 flex justify-center">
+        <Image
+          src={ibx266}   // IMPORTANT: import your full text logo file
+          alt="IBOM Blockchain Xperience 2026"
+          className="w-[220px] h-auto"
+        />
+      </div>
+
+      <a
+        href="mailto:partnerships@ibomblockchain.com"
+        className="bg-orange-500 hover:bg-orange-600 text-black font-bold text-[14px] rounded-lg px-10 py-3 transition transform hover:scale-105  block text-center"
+      >
+        Become Our Partner
+      </a>
+
     </div>
+  </div>
 </section>
+
                 {/* Event Outline Section - DESKTOP */}
                 <section className="py-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto hidden md:block">
                     <div className="w-full max-w-[1441px] mx-auto">
@@ -836,9 +831,7 @@ export default function Landing() {
                             <h2 className="font-display text-[56px] font-black leading-[64px] tracking-[-0.01em] text-white">
                                 Event Outline
                             </h2>
-                            <button className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition whitespace-nowrap">
-                                Add to Calendar
-                            </button>
+                           
                         </div>
 
                         <div className="mb-12">
@@ -904,9 +897,13 @@ export default function Landing() {
                                     We are proud to partner with these industry leaders who share our passion for discovery and help make our expeditions possible.
                                 </p>
                             </div>
-                            <Link href="/maintenance" className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition whitespace-nowrap">
-                                Become a collaborator
-                            </Link>
+ <Link
+  href="/maintenance"
+  className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition whitespace-nowrap"
+>
+  Become Our Collaborator
+</Link>
+
                         </div>
 
                         {/* Collaborators Grid - 5 Rows with Alternating Scroll Directions */}
@@ -1035,9 +1032,7 @@ export default function Landing() {
                             We are proud to partner with these industry leaders who share our passion for discovery and help make our expeditions possible.
                         </p>
 
-                        <Link href="/maintenance" className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition w-full block text-center">
-                            Become a collaborator
-                        </Link>
+                       
                     </div>
 
                     <div className="space-y-6">
